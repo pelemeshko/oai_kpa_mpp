@@ -1,4 +1,42 @@
 [[package]]
+name = "oai-modbus"
+version = "2.0.1"
+description = ""
+category = "main"
+optional = false
+python-versions = "^3.7"
+develop = false
+
+[package.dependencies]
+pymodbus = "^2.4.0"
+pyserial = "^3.5"
+
+[package.source]
+type = "git"
+url = "https://github.com/CrinitusFeles/OAI_Modbus.git"
+reference = "master"
+resolved_reference = "3529e462a9d7c7e4219e16137db4e7851d588d23"
+
+[[package]]
+name = "pymodbus"
+version = "2.5.2"
+description = "A fully featured modbus protocol stack in python"
+category = "main"
+optional = false
+python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*"
+
+[package.dependencies]
+pyserial = ">=3.4"
+six = ">=1.15.0"
+
+[package.extras]
+documents = ["sphinx (>=1.1.3)", "sphinx-rtd-theme", "humanfriendly"]
+quality = ["coverage (>=3.5.3)", "nose (>=1.2.1)", "mock (>=1.0.0)", "pep8 (>=1.3.3)"]
+repl = ["click (>=7.0)", "prompt-toolkit (==2.0.4)", "pygments (>=2.2.0)", "click (>=7.0)", "prompt-toolkit (>=3.0.8)", "pygments (>=2.2.0)", "aiohttp (>=3.7.3)", "pyserial-asyncio (>=0.5)"]
+tornado = ["tornado (==4.5.3)"]
+twisted = ["Twisted[conch,serial] (>=20.3.0)", "Twisted[conch] (>=20.3.0)"]
+
+[[package]]
 name = "pyqt5"
 version = "5.15.4"
 description = "Python bindings for the Qt cross platform application toolkit"
@@ -26,12 +64,36 @@ category = "main"
 optional = false
 python-versions = ">=3.5"
 
+[[package]]
+name = "pyserial"
+version = "3.5"
+description = "Python Serial Port Extension"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.extras]
+cp2110 = ["hidapi"]
+
+[[package]]
+name = "six"
+version = "1.16.0"
+description = "Python 2 and 3 compatibility utilities"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
+
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "0ac16c6765dcf4f21a20ecec1d9df2d7019a66d36ce9e30ec347f7a1e7ef5554"
+content-hash = "cc7303fefd01312f7c2385afa26231d0a2ba0a00c35a12bfa25c7bc5a45b9af2"
 
 [metadata.files]
+oai-modbus = []
+pymodbus = [
+    {file = "pymodbus-2.5.2-py2.py3-none-any.whl", hash = "sha256:42a88132d2598e21eb958c2e017d400bd8b09e99abbc2be17325d5e329252a07"},
+    {file = "pymodbus-2.5.2.tar.gz", hash = "sha256:367a3984d44816257097ca63aa3142825e7aa8f4d725cb4ed632a2f806d30469"},
+]
 pyqt5 = [
     {file = "PyQt5-5.15.4-cp36.cp37.cp38.cp39-abi3-macosx_10_13_intel.whl", hash = "sha256:8c0848ba790a895801d5bfd171da31cad3e551dbcc4e59677a3b622de2ceca98"},
     {file = "PyQt5-5.15.4-cp36.cp37.cp38.cp39-abi3-manylinux2014_x86_64.whl", hash = "sha256:883a549382fc22d29a0568f3ef20b38c8e7ab633a59498ac4eb63a3bf36d3fd3"},
@@ -63,4 +125,12 @@ pyqt5-sip = [
     {file = "PyQt5_sip-12.9.0-cp39-cp39-win32.whl", hash = "sha256:4f8e05fe01d54275877c59018d8e82dcdd0bc5696053a8b830eecea3ce806121"},
     {file = "PyQt5_sip-12.9.0-cp39-cp39-win_amd64.whl", hash = "sha256:b09f4cd36a4831229fb77c424d89635fa937d97765ec90685e2f257e56a2685a"},
     {file = "PyQt5_sip-12.9.0.tar.gz", hash = "sha256:d3e4489d7c2b0ece9d203ae66e573939f7f60d4d29e089c9f11daa17cfeaae32"},
+]
+pyserial = [
+    {file = "pyserial-3.5-py2.py3-none-any.whl", hash = "sha256:c4451db6ba391ca6ca299fb3ec7bae67a5c55dde170964c7a14ceefec02f2cf0"},
+    {file = "pyserial-3.5.tar.gz", hash = "sha256:3c77e014170dfffbd816e6ffc205e9842efb10be9f58ec16d3e8675b4925cddb"},
+]
+six = [
+    {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
+    {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
 ]

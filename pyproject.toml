@@ -7,6 +7,8 @@ authors = ["crinitusfeles <crinitusfeles@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 PyQt5 = "^5.15"
+pyserial = "^3.5"
+oai_modbus = { git = "https://github.com/CrinitusFeles/OAI_Modbus.git" }
 
 [tool.poetry.dev-dependencies]
 

@@ -1,0 +1,15 @@
+.idea
+__pycache__
+venv
+build
+cfg
+dist
+log
+commands.json
+config.json
+icon.png
+icon2.png
+oai_kpa_main_backend.spec
+pyinstaller_script.bat
+ui_to_py.bat
+install_dependencies.bat

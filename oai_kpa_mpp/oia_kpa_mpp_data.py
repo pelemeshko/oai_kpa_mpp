@@ -2,7 +2,10 @@
 
 import time
 import threading
-import oai_modbus
+try:
+    import OAI_Modbus as oai_modbus
+except ImportError:
+    import oai_modbus
 import json
 
 

@@ -10,8 +10,17 @@ import os
 import re
 import json
 # модули ОАИ_КПА
-from . import oai_kpa_mpp_widget_qt
-from . import oia_kpa_mpp_data
+from PyQt5.QtWidgets import QApplication
+
+try:
+    from . import oai_kpa_mpp_widget_qt
+    from . import oia_kpa_mpp_data
+    from . import oai_kpa_mpp_impact
+except ImportError:
+    print('starting as module')
+    import oai_kpa_mpp_widget_qt
+    import oia_kpa_mpp_data
+    import oai_kpa_mpp_impact
 
 
 class ClientGUIWindow(QtWidgets.QWidget, oai_kpa_mpp_widget_qt.Ui_Form):
@@ -75,6 +84,12 @@ class ClientGUIWindow(QtWidgets.QWidget, oai_kpa_mpp_widget_qt.Ui_Form):
 
         # Часть под правку: здесь вы инициализируете необходимые компоненты
         self.module = oia_kpa_mpp_data.OaiKpaMPP(serial_num=self.cfg["core"]["serial_num"])
+        self.impact_mpp_ch1 = oai_kpa_mpp_impact.ImpactModuleMPP(channel=1)
+        self.impact_mpp_ch2 = oai_kpa_mpp_impact.ImpactModuleMPP(channel=2)
+        self.impact_mpp_ch1.set_client(self.module.client)
+        self.impact_mpp_ch2.set_client(self.module.client)
+        self.en_ch1_pushbutton.pressed.connect(self.start_ch1_impact)
+        self.en_ch2_pushbutton.pressed.connect(self.start_ch2_impact)
 
         # the table for stm_channels data visualisation
         self.stm_color_map = {0: "darkturquoise", 1: "darkseagreen", 2: "lightcoral"}
@@ -174,6 +189,8 @@ class ClientGUIWindow(QtWidgets.QWidget, oai_kpa_mpp_widget_qt.Ui_Form):
         self.connection_state_check()
         #
         self.save_cfg()
+        # self.impact_mpp_ch1.set_client(self.module.client)
+        # self.impact_mpp_ch2.set_client(self.module.client)
         pass
 
     def disconnect(self):
@@ -408,3 +425,34 @@ class ClientGUIWindow(QtWidgets.QWidget, oai_kpa_mpp_widget_qt.Ui_Form):
     def closeEvent(self, event):
         self.save_cfg()
         pass
+
+#  ------------------------  MPP impact module  ----------------------------
+    def start_ch1_impact(self):
+        try:
+            self.impact_mpp_ch1.init_impact_parameters(U0=self.ch1_u0_spinbox.value(), U1=self.ch1_u1_spinbox.value(),
+                                                       N=self.ch1_N_spinbox.value(), M=self.ch1_M_spinbox.value(),
+                                                       T=self.ch1_T_spinbox.value(), t=self.ch1_t_spinbox.value())
+            self.impact_mpp_ch1.write_impact_parameters()
+            print(self.impact_mpp_ch1.get_impact_parameters())
+            self.impact_mpp_ch1.start_impact()
+        except Exception as ex:
+            print(ex)
+    
+    def start_ch2_impact(self):
+        try:
+            self.impact_mpp_ch2.init_impact_parameters(U0=self.ch2_u0_spinbox.value(), U1=self.ch2_u1_spinbox.value(),
+                                                       N=self.ch2_N_spinbox.value(), M=self.ch2_M_spinbox.value(),
+                                                       T=self.ch2_T_spinbox.value(), t=self.ch2_t_spinbox.value())
+            self.impact_mpp_ch2.write_impact_parameters()
+            print(self.impact_mpp_ch2.get_impact_parameters())
+            self.impact_mpp_ch2.start_impact()
+        except Exception as ex:
+            print(ex)
+        
+
+# ==========================================================================
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    w = ClientGUIWindow(serial_num='207F369F424D')
+    w.show()
+    app.exec_()

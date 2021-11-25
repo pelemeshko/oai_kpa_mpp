@@ -14,6 +14,32 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="5" column="2">
+    <widget class="Line" name="line_10">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>10</height>
+      </size>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="Line" name="line">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>10</height>
+      </size>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
    <item row="0" column="0">
     <widget class="QFrame" name="userFrame">
      <property name="sizePolicy">
@@ -95,231 +121,295 @@
              <attribute name="title">
               <string>Канал 1</string>
              </attribute>
-             <widget class="QWidget" name="formLayoutWidget">
-              <property name="geometry">
-               <rect>
-                <x>10</x>
-                <y>10</y>
-                <width>375</width>
-                <height>186</height>
-               </rect>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_4">
-               <item row="3" column="1">
-                <widget class="QLabel" name="label_4">
-                 <property name="text">
-                  <string>Амплитуда, В</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="7" column="1">
-                <widget class="QLabel" name="label_7">
-                 <property name="text">
-                  <string>Длительность импульса, мкс</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="6" column="1">
-                <widget class="QLabel" name="label_8">
-                 <property name="text">
-                  <string>Период, мкс</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="7" column="2">
-                <widget class="QLineEdit" name="lineEdit_4"/>
-               </item>
-               <item row="1" column="2">
-                <widget class="QLabel" name="label_9">
-                 <property name="text">
-                  <string>Значение</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="2">
-                <widget class="QLineEdit" name="lineEdit_2"/>
-               </item>
-               <item row="3" column="0">
-                <widget class="QRadioButton" name="radioButton_2">
-                 <property name="text">
-                  <string>Синусоидальный</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="2">
-                <widget class="QLineEdit" name="lineEdit_5"/>
-               </item>
-               <item row="4" column="2">
-                <widget class="QLineEdit" name="lineEdit"/>
-               </item>
-               <item row="5" column="0">
-                <widget class="QRadioButton" name="radioButton">
-                 <property name="text">
-                  <string>Импульсный</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="6" column="2">
-                <widget class="QLineEdit" name="lineEdit_3"/>
-               </item>
-               <item row="2" column="1">
-                <spacer name="horizontalSpacer_3">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>10</width>
-                   <height>5</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="4" column="1">
-                <widget class="QLabel" name="label_5">
-                 <property name="text">
-                  <string>Период, мкс</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="1">
-                <widget class="QLabel" name="label_6">
-                 <property name="text">
-                  <string>Амплитуда, В</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QLabel" name="label_3">
-                 <property name="text">
-                  <string>Параметры сигнала</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="label_2">
-                 <property name="text">
-                  <string>Тип сигнала</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item>
+               <layout class="QGridLayout" name="gridLayout_4">
+                <item row="6" column="0">
+                 <widget class="QLabel" name="label_4">
+                  <property name="text">
+                   <string>Кол-во воздействий</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="Line" name="line_4">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="0">
+                 <widget class="QLabel" name="label_7">
+                  <property name="text">
+                   <string>Длительность импульсов, мс</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="0">
+                 <widget class="QLabel" name="label_8">
+                  <property name="text">
+                   <string>Период воздействий, мс</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLabel" name="label_9">
+                  <property name="text">
+                   <string>Значение</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QLabel" name="label_6">
+                  <property name="text">
+                   <string>Уровень низкого напряжения, В</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="0">
+                 <widget class="QLabel" name="label_2">
+                  <property name="text">
+                   <string>Кол-во импульсов</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="label_3">
+                  <property name="text">
+                   <string>Параметры сигнала</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="Line" name="line_5">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QLabel" name="label_5">
+                  <property name="text">
+                   <string>Уровень высокого напряжения, В</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QDoubleSpinBox" name="ch1_u0_spinbox">
+                  <property name="minimum">
+                   <double>-15.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>15.000000000000000</double>
+                  </property>
+                  <property name="value">
+                   <double>-5.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QDoubleSpinBox" name="ch1_u1_spinbox">
+                  <property name="minimum">
+                   <double>-15.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>15.000000000000000</double>
+                  </property>
+                  <property name="value">
+                   <double>5.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="1">
+                 <widget class="QSpinBox" name="ch1_N_spinbox">
+                  <property name="maximum">
+                   <number>125</number>
+                  </property>
+                  <property name="value">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="1">
+                 <widget class="QSpinBox" name="ch1_M_spinbox">
+                  <property name="maximum">
+                   <number>255</number>
+                  </property>
+                  <property name="value">
+                   <number>1</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="1">
+                 <widget class="QSpinBox" name="ch1_T_spinbox">
+                  <property name="maximum">
+                   <number>65535</number>
+                  </property>
+                  <property name="value">
+                   <number>100</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="1">
+                 <widget class="QDoubleSpinBox" name="ch1_t_spinbox">
+                  <property name="maximum">
+                   <double>25.500000000000000</double>
+                  </property>
+                  <property name="value">
+                   <double>5.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
             </widget>
             <widget class="QWidget" name="tab_2">
              <attribute name="title">
               <string>Канал 2</string>
              </attribute>
-             <widget class="QWidget" name="formLayoutWidget_2">
-              <property name="geometry">
-               <rect>
-                <x>10</x>
-                <y>10</y>
-                <width>375</width>
-                <height>186</height>
-               </rect>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_5">
-               <item row="3" column="1">
-                <widget class="QLabel" name="label_10">
-                 <property name="text">
-                  <string>Амплитуда, В</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="7" column="1">
-                <widget class="QLabel" name="label_11">
-                 <property name="text">
-                  <string>Длительность импульса, мкс</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="6" column="1">
-                <widget class="QLabel" name="label_12">
-                 <property name="text">
-                  <string>Период, мкс</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="7" column="2">
-                <widget class="QLineEdit" name="lineEdit_6"/>
-               </item>
-               <item row="1" column="2">
-                <widget class="QLabel" name="label_13">
-                 <property name="text">
-                  <string>Значение</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="2">
-                <widget class="QLineEdit" name="lineEdit_7"/>
-               </item>
-               <item row="3" column="0">
-                <widget class="QRadioButton" name="radioButton_3">
-                 <property name="text">
-                  <string>Синусоидальный</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="2">
-                <widget class="QLineEdit" name="lineEdit_8"/>
-               </item>
-               <item row="4" column="2">
-                <widget class="QLineEdit" name="lineEdit_9"/>
-               </item>
-               <item row="5" column="0">
-                <widget class="QRadioButton" name="radioButton_4">
-                 <property name="text">
-                  <string>Импульсный</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="6" column="2">
-                <widget class="QLineEdit" name="lineEdit_10"/>
-               </item>
-               <item row="2" column="1">
-                <spacer name="horizontalSpacer_4">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>10</width>
-                   <height>5</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="4" column="1">
-                <widget class="QLabel" name="label_14">
-                 <property name="text">
-                  <string>Период, мкс</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="1">
-                <widget class="QLabel" name="label_15">
-                 <property name="text">
-                  <string>Амплитуда, В</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QLabel" name="label_16">
-                 <property name="text">
-                  <string>Параметры сигнала</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="label_17">
-                 <property name="text">
-                  <string>Тип сигнала</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+               <layout class="QGridLayout" name="gridLayout_5">
+                <item row="6" column="0">
+                 <widget class="QLabel" name="label_10">
+                  <property name="text">
+                   <string>Кол-во воздействий</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="Line" name="line_6">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="0">
+                 <widget class="QLabel" name="label_11">
+                  <property name="text">
+                   <string>Длительность импульсов, мс</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="0">
+                 <widget class="QLabel" name="label_12">
+                  <property name="text">
+                   <string>Период воздействий, мс</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLabel" name="label_13">
+                  <property name="text">
+                   <string>Значение</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QLabel" name="label_14">
+                  <property name="text">
+                   <string>Уровень низкого напряжения, В</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="0">
+                 <widget class="QLabel" name="label_15">
+                  <property name="text">
+                   <string>Кол-во импульсов</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="label_16">
+                  <property name="text">
+                   <string>Параметры сигнала</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="Line" name="line_7">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QLabel" name="label_17">
+                  <property name="text">
+                   <string>Уровень высокого напряжения, В</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QDoubleSpinBox" name="ch2_u0_spinbox">
+                  <property name="minimum">
+                   <double>-15.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>15.000000000000000</double>
+                  </property>
+                  <property name="value">
+                   <double>-3.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QDoubleSpinBox" name="ch2_u1_spinbox">
+                  <property name="minimum">
+                   <double>-15.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>15.000000000000000</double>
+                  </property>
+                  <property name="value">
+                   <double>3.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="1">
+                 <widget class="QSpinBox" name="ch2_N_spinbox">
+                  <property name="maximum">
+                   <number>125</number>
+                  </property>
+                  <property name="value">
+                   <number>5</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="1">
+                 <widget class="QSpinBox" name="ch2_M_spinbox">
+                  <property name="maximum">
+                   <number>255</number>
+                  </property>
+                  <property name="value">
+                   <number>2</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="1">
+                 <widget class="QSpinBox" name="ch2_T_spinbox">
+                  <property name="maximum">
+                   <number>65535</number>
+                  </property>
+                  <property name="value">
+                   <number>200</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="1">
+                 <widget class="QDoubleSpinBox" name="ch2_t_spinbox">
+                  <property name="maximum">
+                   <double>25.500000000000000</double>
+                  </property>
+                  <property name="value">
+                   <double>15.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
             </widget>
            </widget>
           </item>
@@ -328,14 +418,14 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_6">
           <item>
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="en_ch1_pushbutton">
             <property name="text">
              <string>Вкл. Канал 1</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_3">
+           <widget class="QPushButton" name="en_ch2_pushbutton">
             <property name="text">
              <string>Вкл. Канал 2</string>
             </property>
@@ -346,14 +436,14 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <widget class="QPushButton" name="pushButton_2">
+           <widget class="QPushButton" name="dis_ch1_pushbutton">
             <property name="text">
              <string>Откл. Канал 1</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_4">
+           <widget class="QPushButton" name="dis_ch2_pushbutton">
             <property name="text">
              <string>Откл. Канал 2</string>
             </property>
@@ -550,19 +640,6 @@
      </layout>
     </widget>
    </item>
-   <item row="5" column="2">
-    <widget class="Line" name="line_10">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>10</height>
-      </size>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-   </item>
    <item row="6" column="0">
     <layout class="QGridLayout" name="coreGLayout">
      <property name="sizeConstraint">
@@ -638,19 +715,6 @@
       </widget>
      </item>
     </layout>
-   </item>
-   <item row="5" column="0">
-    <widget class="Line" name="line">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>10</height>
-      </size>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
    </item>
   </layout>
  </widget>
